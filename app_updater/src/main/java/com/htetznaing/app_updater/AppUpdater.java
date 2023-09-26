@@ -263,7 +263,8 @@ public class AppUpdater {
                         .onPositive(new MaterialDialog.SingleButtonCallback() {
                             @Override
                             public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                                dlFile(download, title + versionName + ".apk");
+                               // dlFile(download, title + versionName + ".apk");
+                                activity.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(download)));
                             }
                         })
                         .setNegativeText("Close")
